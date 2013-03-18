@@ -361,7 +361,7 @@ class View(object):
         
         starting_from = ''
         if self.offset is not None and self.offset>0:
-            starting_from = ' (%i-%i)'%(offset, offset+nr)
+            starting_from = ' (%i-%i)'%(self.offset, self.offset+nr)
         return '<%s>' % "".join([self.view+":", out_of, starting_from])
 
     def __iter__(self):
