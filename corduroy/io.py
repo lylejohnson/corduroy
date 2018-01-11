@@ -520,7 +520,7 @@ class TornadoClient(object):
         req = self.async.request(endpoint, streaming_callback=buffer_response,
                                connect_timeout=an_hour, request_timeout=an_hour)
         if listener.auth:
-            req.auth_username, self.req.auth_password = listener.auth
+            req.auth_username, req.auth_password = listener.auth
         self.async.client.fetch(req, listener._closed)
         
     def timeout(self, secs, callback):
